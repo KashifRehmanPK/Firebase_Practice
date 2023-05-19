@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Firebase"
+        tools:targetApi="31">
+        <activity
+            android:name=".seventh.dashboard2"
+            android:exported="false" />
+        <activity
+            android:name=".seventh.manageotp"
+            android:exported="false" />
+        <activity
+            android:name=".seventh.OTP"
+            android:exported="false" />
+        <activity
+            android:name=".sixthvideo.dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".sixthvideo.login"
+            android:exported="false" />
+        <activity
+            android:name=".fifthvideos.New_User_Authentication_Login_Logout_User_Managment"
+            android:exported="false" />
+        <activity
+            android:name=".fourthvideo.textandimage_account_creation"
+            android:exported="false" />
+        <activity
+            android:name=".thirdvideo.image"
+            android:exported="false" />
+        <activity
+            android:name=".secondvideo.text"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
