@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.firebase.Eight.google_login;
 import com.example.firebase.R;
+import com.example.firebase.fifthvideos.New_User_Authentication_Login_Logout_User_Managment;
 import com.hbb20.CountryCodePicker;
 
 public class OTP extends AppCompatActivity {
@@ -16,6 +18,7 @@ public class OTP extends AppCompatActivity {
     CountryCodePicker ccp;
     EditText t1;
     Button b1;
+    Button button;
 
 
     @Override
@@ -37,6 +40,14 @@ public class OTP extends AppCompatActivity {
             }
         });
 
+
+
+    }
+
+    public void next(View view) {
+        button = (Button) findViewById(R.id.button7);
+        Intent intent = new Intent(OTP.this, google_login.class);
+        startActivity(intent);
 
 
     }

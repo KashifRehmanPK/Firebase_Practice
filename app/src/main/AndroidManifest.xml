@@ -20,6 +20,9 @@
         android:theme="@style/Theme.Firebase"
         tools:targetApi="31">
         <activity
+            android:name=".Eight.google_login"
+            android:exported="false" />
+        <activity
             android:name=".seventh.dashboard2"
             android:exported="false" />
         <activity
