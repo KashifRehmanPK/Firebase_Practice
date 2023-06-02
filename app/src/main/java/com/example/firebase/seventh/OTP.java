@@ -4,21 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.firebase.Eight.google_login;
 import com.example.firebase.R;
-import com.example.firebase.fifthvideos.New_User_Authentication_Login_Logout_User_Managment;
 import com.hbb20.CountryCodePicker;
 
 public class OTP extends AppCompatActivity {
 
-    CountryCodePicker ccp;
-    EditText t1;
-    Button b1;
-    Button button;
+    private CountryCodePicker countryCodePicker;
+    private EditText phoneNumber;
 
 
     @Override
@@ -26,29 +26,51 @@ public class OTP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
 
-        t1=(EditText) findViewById(R.id.t1);
-        ccp=(CountryCodePicker) findViewById(R.id.ccp);
-        ccp.registerCarrierNumberEditText(t1);
-        b1=(Button) findViewById(R.id.b1);
+        countryCodePicker = findViewById(R.id.country_code_picker);
+        phoneNumber = findViewById(R.id.signup_phone_number);
+        Button next11 = findViewById(R.id.signup_next_button);
+        Button google1 = findViewById(R.id.google11);
 
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(OTP.this, manageotp.class);
-                intent.putExtra("mobile",ccp.getFullNumberWithPlus().replace(" ",""));
-                startActivity(intent);
+
+        countryCodePicker.registerCarrierNumberEditText(phoneNumber);
+
+        next11.setOnClickListener(view -> {
+
+            if (TextUtils.isEmpty(phoneNumber.getText().toString()))
+            {
+                Toast.makeText(OTP.this, "Please enter your phone number", Toast.LENGTH_SHORT).show();
             }
+            else if (phoneNumber.getText().toString().replace(" ", "").length() != 10)
+            {
+                Toast.makeText(OTP.this, "Please enter a correct phone number", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Intent intent = new Intent(OTP.this, VerifyOTPActivity.class);
+                intent.putExtra("phoneNo", countryCodePicker.getFullNumberWithPlus().replace(" ",""));
+                startActivity(intent);
+                finish();
+            }
+
         });
 
+
+        google1.setOnClickListener(v -> {
+            Intent intent = new Intent(OTP.this, google_login.class);
+            startActivity(intent);
+        });
 
 
     }
 
-    public void next(View view) {
-        button = (Button) findViewById(R.id.button7);
+
+
+
+
+
+
+
+    public void google11(View view) {
         Intent intent = new Intent(OTP.this, google_login.class);
         startActivity(intent);
-
-
     }
 }

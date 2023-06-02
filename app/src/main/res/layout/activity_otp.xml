@@ -8,7 +8,7 @@
 
 
     <com.hbb20.CountryCodePicker
-        android:id="@+id/ccp"
+        android:id="@+id/country_code_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
@@ -20,7 +20,7 @@
     </com.hbb20.CountryCodePicker>
 
     <EditText
-        android:id="@+id/t1"
+        android:id="@+id/signup_phone_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
@@ -31,7 +31,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/b1"
+        android:id="@+id/signup_next_button"
+        android:onClick="callverifyOTPScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="288dp"
@@ -42,11 +43,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/google11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5"
-        android:onClick="next"
+        android:onClick="google11"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
